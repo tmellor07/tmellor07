@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @tmellor07   terri Mellor
-- 👀 I’m interested in ...nothing
-- 🌱 I’m currently learning ... github
-- 💞️ I’m looking to collaborate on ... anything 
+- 👀 I’m interested in ...Try 2
+- 🌱 I’m currently learning ... github 2
+- 💞️ I’m looking to collaborate on ... anything, lets talk
 - 📫 How to reach me ... why do you need to reach me
 
 <!---
