@@ -1,0 +1,32 @@
+cli cp ../dmsi/ftp.inc .
+cli mv ftp.inc ftp.scr
+cli chmod 777 ftp.scr
+cli ./ftp.scr
+
+
+xlsximport/filename="driver_rates"/local/overwrite/caseinsensitive/sheets="all" "driver_rates.xlsx"
+
+
+list /hold="hf_driver"
+    driver_rates:driver/keyelement=1.1
+    pay_rate
+;
+run
+
+xlsximport/filename="Mileage"/local/overwrite/caseinsensitive/sheets="all" "Miles.xlsx"
+
+
+list/nodetail/nodefaults/pagelength=0
+   Mileage:vehicle_name vehicle_name distance_mi driving_time_hours stops start_odometer_mi end_odometer_mi rownumber
+end of Report
+   'define number MileTotal = ' + Str(total[distance_mi] )
+;
+run
+rreplace miles
+cli mv miles.cq miles.inc
+
+
+xlsximport/filename="DispatchViewer"/local/overwrite/caseinsensitive/headingrow=2/sheets="all" "dispatch.xlsx"
+
+run ../Dugar/dispatch_perm_rpt.eq
+view performance_rpt.xlsx
